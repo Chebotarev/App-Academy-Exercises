@@ -98,12 +98,3 @@ end
 
 c = Game.new
 c.run
-rgby
-# code1 = Code.random
-# code2 = Code.random
-#
-# code1.exact_matches(code2) # => [false, false, true, false]
-# # secret = Code.random
-# # p secret
-# secret = Code.parse('rbyb')
-# p secret

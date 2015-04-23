@@ -10,7 +10,7 @@ class HumanPlayer
     Integer(gets.chomp)
   end
 
-  def handle_guess_response(guess)
+  def handle_guess_respse(guess)
     check_guess(guess)
   end
 
@@ -20,10 +20,10 @@ class HumanPlayer
 
   private
 
-  def check_guess(guess)
-    puts "Enter the positions '#{guess}' appears in your word (Enter for none)"
-    gets.chomp.split.map(&:to_i)
-  end
+    def check_guess(guess)
+      puts "Enter the positions '#{guess}' appears in your word (Enter for none)"
+      gets.chomp.split.map(&:to_i)
+    end
 end
 
 class ComputerPlayer
@@ -55,6 +55,9 @@ class ComputerPlayer
 
   private
 
+    attr_accessor :secret_word
+
+
     def check_guess(guess)
       matched_indices = []
       secret_word.split("").each_with_index do |char, idx|
@@ -82,24 +85,7 @@ class ComputerPlayer
       letter_frequencies.sort_by { |k, v| v }.last[0]
     end
 
-    private
-
-    attr_accessor :secret_word
 end
-#
-# class Player
-#
-#   def initialize
-#   end
-#
-#   def check_guess(guess)
-#     matched_indices = []
-#     secret_word.split("").each_with_index do |char, idx|
-#       matched_indices << idx if char == guess
-#     end
-#     matched_indices
-#   end
-# end
 
 class Hangman
   attr_accessor :state
@@ -125,14 +111,13 @@ class Hangman
 
   private
 
-  def update_state(guess)
-    response = @secret_player.handle_guess_response(guess)
-    response.each do |idx|
-      @state[idx] = guess
+    def update_state(guess)
+      response = @secret_player.handle_guess_response(guess)
+      response.each do |idx|
+        @state[idx] = guess
+      end
     end
-  end
 end
 
-# hang = Hangman.new(HumanPlayer.new, ComputerPlayer.new)
-hang = Hangman.new(ComputerPlayer.new, HumanPlayer.new)
-hang.run
+hang_man = Hangman.new(ComputerPlayer.new, HumanPlayer.new)
+hang_man.run
