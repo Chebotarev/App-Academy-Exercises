@@ -1,37 +1,24 @@
 <p>
-  The topics of the day at App Academy were blocks and recursion. It was by far
-  the most difficult subject matter so far. My partner and I got thorough the
-  exercises on blocks almost in the first hour, and spent the rest of the day on
-  recursion. We monkey-patched the Array class with methods that emulated
-  <b>each, map, select</b> and <b>inject</b> with blocks.
+  The topics of the day at App Academy were blocks and recursion. It was by far the most difficult subject matter so far. My partner and I got thorough the exercises on blocks almost in the first hour, and spent the rest of the day on recursion. We monkey-patched the Array class with methods that emulated <b>each, map, select</b> and <b>inject</b> with blocks.
 </p>
 
 <p>
-  Recursion was a difficult topic, and each exercise required a lot of planning
-  beforehand. The concept is to break down a problem into smaller, yet similar,
-  parts until the parts are trivial to solve. In the simple case of a factorial,
-  every factorial <code>n!<code> can be rewritten as <code>n * (n-1)!</code>.
-  Therefore we can write a method:
+  Recursion was a difficult topic, and each exercise required a lot of planning beforehand. The concept is to break down a problem into smaller, yet similar, parts until the parts are trivial to solve. In the simple case of a factorial, every factorial <code>n!</code> can be rewritten as <code>n * (n-1)!</code>. Therefore we can write a method:
 </p>
 
-<code>
+<pre>
   def factorial(n)
     return 1 if n == 0
     n * factorial(n-1)
   end
-</code>
+</pre>
 
 <p>
-  The key is that the method <b>factorial</b> calls itself and only returns in
-  the trivial case that <b>0! = 1</b>. Each recursive call to factorial gets
-  closer to the "base case", using <a href="#">induction</a> to solve the
-  problem.
+  The key is that the method <b>factorial</b> calls itself and only returns in the trivial case that <b>0! = 1</b>. Each recursive call to factorial gets closer to the "base case", using <a href="http://en.wikipedia.org/wiki/Mathematical_induction" target="_blank">induction</a> to solve the problem.
 </p>
 
 <h3>Useful Tips</h3>
 <ul>
-  <li>Recursion can be difficult to visualize, be sure to draw a branching
-  diagram for complex problems</li>
-  <li>You can call <b>object.class.new</b> to instatiate an empty instance of
-  the object, as long as it doesn't override <b>new</b> with factory methods!</li>
+  <li>Recursion can be difficult to visualize, be sure to draw a branching diagram for complex problems</li>
+  <li>You can call <b>object.class.new</b> to instatiate an empty instance of <b>object</b>, as long as it doesn't override <b>new</b> with factory methods!</li>
 </ul>
