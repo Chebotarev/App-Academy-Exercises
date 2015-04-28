@@ -1,15 +1,15 @@
 <p>
-  We had our first assessment today! It covered a variety of topics including
-  recursion, blocks and various array methods. I felt it was a fair test and in
-  the end I got all the specs to pass. Afterwards we had a lecture on JSON and
-  YAML serialization given by Andrew.
+  We had our first assessment today! It covered a variety of topics including recursion, blocks and various array methods. I felt it was a fair test and in the end I got all the specs to pass. Afterwards, we had a lecture on JSON and YAML serialization given by Andrew.
+</p>
+
+<p>
+  My scheduled pair was absent, so I had a solo day implementing a console-based MineSweeper. I managed to finish the game and save the Game class object in YAML to a file. Having a solo day after a week of pairing is an interesting change of pace. I felt that it went faster when I didn't have to explain my logic, but my code was more error prone because of it. I spent a lot of time debugging in <strong>pry</strong> and refactoring.
 </p>
 
 <h3>Useful Tips</h3>
 <ul>
-  <li>Use <strong>to_json / to_yaml</strong> and <strong>JSON::parse(some_json)
-  / YAML::load(some_yaml)</strong>to convert Ruby objects into the respective
-  formats <em>(Note: Unlike YAML, JSON does not natively support converting
-    custom classes, although it is possible to overwrite the to_json method)</em></li>
-    <li></li>
+    <li>Use <strong><code>to_json || to_yaml</code></strong> and <strong><code>JSON::parse(some_json)
+  || YAML::load(some_yaml)</code></strong> to convert Ruby objects into the respective formats <em>(Note: Unlike YAML, JSON does not natively support converting custom classes, although it is possible to overwrite the to_json method)</em></li>
+
+    <li>In <a href="http://pryrepl.org/" target="_blank">pry</a>, you can reference the previous return value with an underscore <em>(particularly useful when you forget to save something as a variable)</em></li>
 </ul>
