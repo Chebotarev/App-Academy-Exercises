@@ -184,6 +184,6 @@ end
 
 
 if __FILE__ == $PROGRAM_NAME
-  game = Game.new
+  game = Game.new(10)
   game.run
 end

@@ -1,0 +1,14 @@
+<p>
+After working with SQL yesterday, it was time to connect the concepts of database queries to the  Ruby curriculum. Today we did that by implementing an <a href="http://en.wikipedia.org/wiki/Object-relational_mapping" target="_blank">object-relational mapping</a> between the row entries in a database and custom Ruby objects. This involved first creating a singelton class that handles queries by inheriting from the <a href="https://github.com/sparklemotion/sqlite3-ruby" target="_blank">SQLite3 gem</a>. We then wrote a class for every table that allowed us to instantiate objects which encapsulated the data and write methods to simulate the relationships between the objects. We could then manipulate the database itself by calling methods on those objects with <abbr title="Data Manipulation Language">DML</abbr> statements.
+</p>
+
+<p>
+These exercises helped solidify my understanding of the way Ruby on Rails interacts with databases. By the end of the day, it was obvious that the objects my partner and I wrote emulated a lot of the functionality of the framework we were exposed to in the <a href="https://www.railstutorial.org/book" target="_blank">Hartl Rails Tutorial</a>. In fact, <abbr title="Ruby on Rails">RoR</abbr> wraps it's object-relational mapping in a library called <a href="http://guides.rubyonrails.org/active_record_basics.html" target="_blank">ActiveRecord</a>, which can then interact with most relational <abbr title="Database Management Systems>DBMS</abbr> <em>(commonly SQLite3 in development/testing and PostgreSQL in production)</em>
+</p>
+
+<h3>Useful Tips</h3>
+<ul>
+    <li>Include the Singleton module for classes that should only ever have one instance <em>(like
+the object that manipulates your database)</em>, and use <strong>#instance</strong> to access this instance <em>(the traditional <strong>#initialize</strong> method becomes private)</em></li>
+    <li>The SQLite3 Ruby library includes the <strong>#results_as_hash</strong> method on <strong>SQLite3::Database</strong> which will return a hash of the database values with column names as keys</li>
+</ul>
