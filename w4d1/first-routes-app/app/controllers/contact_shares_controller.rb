@@ -12,13 +12,9 @@ class ContactSharesController < ApplicationController
   end
 
   def destroy
-    begin
-      @contact_share = ContactShare.find(params[:id])
-      @contact_share.destroy
-      render json: @contact_share
-    rescue ActiveRecord::RecordNotFound => e
-      render json: e.message
-    end
+    @contact_share = ContactShare.find(params[:id])
+    @contact_share.destroy
+    render json: @contact_share
   end
 
   private

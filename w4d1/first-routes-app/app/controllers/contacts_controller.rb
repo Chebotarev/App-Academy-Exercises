@@ -12,13 +12,9 @@ class ContactsController < ApplicationController
   end
 
   def destroy
-    begin
-      @contact = Contact.find(params[:id])
-      @contact.destroy
-      render json: @contact
-    rescue ActiveRecord::RecordNotFound => e
-      render json: e.message
-    end
+    @contact = Contact.find(params[:id])
+    @contact.destroy
+    render json: @contact
   end
 
   def index
@@ -30,27 +26,18 @@ class ContactsController < ApplicationController
   end
 
   def show
-    begin
-      @contact = Contact.find(params[:id])
-      render json: @contact
-    rescue ActiveRecord::RecordNotFound => e
-      render json: e.message
-    end
+    @contact = Contact.find(params[:id])
+    render json: @contact
   end
 
   def update
-    begin
-      @contact = Contact.find(params[:id])
-      @contact.update_attributes(contact_params)
-      if @contact.save
-        render json: @contact
-      else
-        render(
-          json: @contact.errors.full_messages, status: :unprocessable_entity
-        )
-      end
-    rescue ActiveRecord::RecordNotFound => e
-      render json: e.message
+    @contact = Contact.find(params[:id])
+    if @contact.update(contact_params)
+      render json: @contact
+    else
+      render(
+        json: @contact.errors.full_messages, status: :unprocessable_entity
+      )
     end
   end
 

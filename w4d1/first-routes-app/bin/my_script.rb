@@ -11,8 +11,8 @@ def create_contact_share
   ).to_s
 
   puts RestClient.post(url,
-                  { contact_share: { contact_id: 5, user_id: 2 }}
-      )
+    { contact_share: { contact_id: 5, user_id: 2 }}
+  )
 end
 
 # create_contact_share

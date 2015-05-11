@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if params[:only]
+      @users = User.limit(params[:only])
+    else
+      @users = User.all
+    end
     render json: @users
   end
 
@@ -20,42 +24,26 @@ class UsersController < ApplicationController
   end
 
   def show
-    begin
-      @user = User.find(params[:id])
-      render json: @user
-
-    rescue ActiveRecord::RecordNotFound => e
-      render json: e.message
-    end
-
+    @user = User.find(params[:id])
+    render json: @user
   end
 
   def update
-    begin
-      @user = User.find(params[:id])
-      @user.update_attributes(user_params)
-      if @user.save
-        render json: @user
-      else
-        render(
-          json: @user.errors.full_messages, status: :unprocessable_entity
-        )
-      end
-    rescue ActiveRecord::RecordNotFound => e
-      render json: e.message
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      render json: @user
+    else
+      render(
+        json: @user.errors.full_messages, status: :unprocessable_entity
+      )
     end
-
-
   end
 
   def destroy
-    begin
-      @user = User.find(params[:id])
-      @user.destroy
-      render json: @user
-    rescue ActiveRecord::RecordNotFound => e
-      render json: e.message
-    end
+    @user = User.find(params[:id])
+    @user.destroy
+    render json: @user
   end
 
   private
