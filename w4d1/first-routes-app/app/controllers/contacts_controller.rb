@@ -22,9 +22,11 @@ class ContactsController < ApplicationController
   end
 
   def index
-    @contacts = Contact.all
+    @user = User.find(params[:user_id])
+    @contacts = @user.contacts
+    @shared_contacts = @user.shared_contacts
 
-    render json: @contacts
+    render json: @contacts + @shared_contacts
   end
 
   def show

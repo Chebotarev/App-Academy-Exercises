@@ -1,6 +1,36 @@
 require 'addressable/uri'
 require 'rest-client'
 
+
+def create_contact_share
+  url = Addressable::URI.new(
+    scheme: 'http',
+    host: 'localhost',
+    port: 3000,
+    path: '/contact_shares.json'
+  ).to_s
+
+  puts RestClient.post(url,
+                  { contact_share: { contact_id: 5, user_id: 2 }}
+      )
+end
+
+# create_contact_share
+
+def destroy_contact_share
+  url = Addressable::URI.new(
+    scheme: 'http',
+    host: 'localhost',
+    port: 3000,
+    path: '/contact_shares/2.json'
+  ).to_s
+
+  puts RestClient.delete(url)
+end
+
+destroy_contact_share
+
+
 def destroy_contact
   url = Addressable::URI.new(
     scheme: 'http',
@@ -12,7 +42,7 @@ def destroy_contact
   puts RestClient.delete(url)
 end
 
-destroy_contact
+# destroy_contact
 
 
 
