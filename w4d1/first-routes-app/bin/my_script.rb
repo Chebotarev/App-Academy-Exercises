@@ -1,6 +1,53 @@
 require 'addressable/uri'
 require 'rest-client'
 
+def destroy_contact
+  url = Addressable::URI.new(
+    scheme: 'http',
+    host: 'localhost',
+    port: 3000,
+    path: '/contacts/4.json'
+  ).to_s
+
+  puts RestClient.delete(url)
+end
+
+destroy_contact
+
+
+
+def update_contact
+  url = Addressable::URI.new(
+    scheme: 'http',
+    host: 'localhost',
+    port: 3000,
+    path: '/contacts/4.json'
+  ).to_s
+
+  puts RestClient.patch(url,
+                  { contact: { name: "CJ Avilla"}}
+      )
+end
+
+# update_contact
+
+
+def create_contact
+  url = Addressable::URI.new(
+    scheme: 'http',
+    host: 'localhost',
+    port: 3000,
+    path: '/contacts.json'
+  ).to_s
+
+  puts RestClient.post(url,
+                  { contact: { name: "CJ", email: "cj@email.com", user_id: 1 }}
+      )
+end
+
+# create_contact
+
+
 def get_index
   url = Addressable::URI.new(
     scheme: 'http',
@@ -55,7 +102,7 @@ def create_user
   end
 end
 
-create_user
+# create_user
 
 
 def show_user
