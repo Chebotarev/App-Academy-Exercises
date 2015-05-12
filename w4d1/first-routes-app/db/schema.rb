@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511234157) do
+ActiveRecord::Schema.define(version: 20150512000812) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body",             null: false
@@ -24,10 +24,11 @@ ActiveRecord::Schema.define(version: 20150511234157) do
   add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
 
   create_table "contact_shares", force: :cascade do |t|
-    t.integer  "contact_id", null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "contact_id",                 null: false
+    t.integer  "user_id",                    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "favorite",   default: false
   end
 
   add_index "contact_shares", ["contact_id", "user_id"], name: "index_contact_shares_on_contact_id_and_user_id", unique: true
@@ -35,11 +36,12 @@ ActiveRecord::Schema.define(version: 20150511234157) do
   add_index "contact_shares", ["user_id"], name: "index_contact_shares_on_user_id"
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "email",      null: false
-    t.integer  "user_id",    null: false
+    t.string   "name",                       null: false
+    t.string   "email",                      null: false
+    t.integer  "user_id",                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "favorite",   default: false
   end
 
   add_index "contacts", ["user_id", "email"], name: "index_contacts_on_user_id_and_email", unique: true

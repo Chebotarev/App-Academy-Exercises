@@ -46,6 +46,20 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def update_favorites
+    @user = User.find(params[:id])
+    
+  end
+
+
+  def favorites
+    @user = User.find(params[:id])
+    @our_contacts = @user.contacts.where(favorite: true)
+    @shared_contacts = @user.contact_shares.where(favorite: true)
+
+    render json: @our_contacts + @shared_contacts
+  end
+
   private
     def user_params
       params.require(:user).permit(:username)
