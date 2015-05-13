@@ -1,0 +1,8 @@
+<h1>Bring your cat into the world!</h1>
+
+<%= render "form",
+  cat: @cat,
+  form_method: 'post',
+  form_action: cats_url,
+  button_name: 'Create Cat'
+%>

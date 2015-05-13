@@ -1,0 +1,8 @@
+<h1>Fix that Cat right up!</h1>
+
+<%= render "form",
+  cat: @cat,
+  form_method: 'patch',
+  form_action: cat_url(@cat),
+  button_name: 'FIX IT'
+%>

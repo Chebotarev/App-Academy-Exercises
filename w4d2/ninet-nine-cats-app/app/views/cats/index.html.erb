@@ -1,0 +1,14 @@
+<h1>ALL THE CATS!</h1>
+
+<% unless @cats.empty? %>
+  <ul>
+    <% @cats.each do |cat| %>
+      <li>
+        <%= link_to cat.name, cat_url(cat) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "Create a new Cat", new_cat_url %>
+<br /><%= link_to "Reserve a Cat!", new_cat_rental_request_url %>

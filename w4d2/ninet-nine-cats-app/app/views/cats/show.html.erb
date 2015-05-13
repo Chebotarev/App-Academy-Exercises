@@ -1,0 +1,26 @@
+<h1> <%= @cat.name %> </h1>
+
+<ul>
+   <li>Birth_date: <%= @cat.birth_date %>   </li>
+   <li>Age: <%= @cat.age %>   </li>
+   <li>Color: <%= @cat.color %></li>
+   <li>Gender: <%= @cat.sex %></li>
+   <li>Description: <%=@cat.description  %> </li>
+</ul>
+
+<%= link_to "Back to all cats", cats_url %>
+<%= link_to "Edit this cat", edit_cat_url(@cat) %>
+
+<h3> Rental requests for <%= @cat.name %></h3>
+
+<% unless @requests.empty? %>
+  <ul>
+    <% @requests.sort { |x, y| x.start_date <=> y.start_date}.each do |request| %>
+      <li>
+        <p>Start Date: <%= request.start_date %></p>
+        <p>End Date: <%= request.end_date %></p>
+        <p>Status: <%= request.status %></p>
+      </li><br />
+    <% end %>
+  </ul>
+<% end %>

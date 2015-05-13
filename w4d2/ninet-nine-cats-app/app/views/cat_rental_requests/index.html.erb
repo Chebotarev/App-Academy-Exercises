@@ -1,0 +1,16 @@
+<h1> Rental requests for <%= @cat.name %></h1>
+
+<% unless @requests.empty? %>
+  <ul>
+    <% @requests.each do |request| %>
+      <li>
+        <p>Start Date: <%= request.start_date %></p>
+        <p>End Date: <%= request.end_date %></p>
+        <p>Status: <%= request.status %></p>
+      </li><br />
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= link_to "Back to all cats", cats_url %>

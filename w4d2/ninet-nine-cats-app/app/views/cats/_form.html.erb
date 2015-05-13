@@ -1,0 +1,71 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <ul>
+      <li> <%= error %> </li>
+    </ul>
+  <% end %>
+<% end %>
+
+<form action="<%= form_action %>" method="post">
+  <input type="hidden" name="_method" value="<%= form_method  %>">
+  <label for="cat-name">Name</label>
+  <input type="text" name="cat[name]" value="<%= cat.name %>">
+
+  <br /><br /><label for="cat-sex">Cat Gender
+    <p>
+      <input
+        type="radio"
+        name="cat[sex]"
+        value="m"
+        <%= "checked" if cat.sex == "m" %>
+      >
+        Male
+    </p>
+    <p>
+      <input
+        type="radio"
+        name="cat[sex]"
+        value="f"
+        <%= "checked" if cat.sex == "f" %>
+      >
+        Female
+    </p>
+  </label>
+
+  <label for="cat-birth-date">Birth Date</label>
+  <input
+    id="cat-birth-date"
+    type="date"
+    name="cat[birth_date]"
+    value="<%= cat.birth_date %>">
+
+  <p>
+    <label for="cat-color">Color</label>
+    <select name="cat[color]" id="cat-color">
+      <option value="none" <%= 'selected' if cat.color.nil? %>>
+        Choose Color
+      </option>
+
+      <% Cat.colors.each do |color| %>
+        <option value="<%=color %>"<%= 'selected' if cat.color == color %> >
+          <%= color.capitalize %>
+        </option>
+      <% end %>
+
+    </select>
+  </p>
+
+  <p>
+    <label for="cat-description">Describe your Cat</label>
+    <br />
+    <textarea
+      name="cat[description]"
+      id="cat-description"
+      rows="5"
+      cols="15"
+      ><%= cat.description %></textarea>
+  </p>
+
+  <input type="submit" value="<%= button_name %>">
+
+</form>
