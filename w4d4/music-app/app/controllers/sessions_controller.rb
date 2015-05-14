@@ -4,15 +4,19 @@ class SessionsController < ApplicationController
   helper_method :logout!
 
   def new
+    @user = User.new
   end
 
   def create
-    @user = User.find_by_email(session_params)
+    email = params[:users][:email]
+    password = params[:users][:password]
+    @user = User.find_by_credentials(email, password)
     if @user
       login!(@user)
       redirect_to user_url(@user)
     else
-      flash.now[:errors] = @user.errors.full_messages
+      flash.now[:errors] ||= []
+      flash.now[:errors] << "Couldn't Login That User!"
       render :new
     end
   end

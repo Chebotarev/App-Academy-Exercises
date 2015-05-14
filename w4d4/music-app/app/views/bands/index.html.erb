@@ -1,0 +1,11 @@
+<% unless @bands.empty? %>
+  <% @bands.each do |band| %>
+    <p>
+      <%= link_to band.name, band_url(band) %>
+    </p>
+  <% end %>
+<% else %>
+  <h2>No Bands!</h2>
+<% end %>
+
+<%= button_to "New Band", new_band_url, method: :get %>

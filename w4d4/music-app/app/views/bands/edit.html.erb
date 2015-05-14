@@ -1,0 +1,6 @@
+<h1>Create Band</h1>
+<%= render 'bands/form',
+            form_submit_text: "Submit Changes",
+            form_action: band_url(@band),
+            form_method: "patch",
+            band: @band %>

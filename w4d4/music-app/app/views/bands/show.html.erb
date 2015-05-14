@@ -1,0 +1,11 @@
+<h1>Band: <%= @band.name %></h1>
+<% unless @band_albums.empty? %>
+  <% @band_albums.each do |album| %>
+    <%= link_to album.name, album_url(album) %>
+  <% end %>
+<% else %>
+  <h2>No Albums!</h2>
+<% end %>
+
+<%= button_to "Edit Band", edit_band_url(@band), method: :get %>
+<br /><%= button_to "Back to Bands", bands_url, method: :get %>
