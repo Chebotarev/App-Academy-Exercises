@@ -1,0 +1,52 @@
+<table>
+  <tr>
+    <% @cat.attributes.each do |attribute, value| %>
+      <th> <%= attribute %> </th>
+    <% end %>
+  </tr>
+
+  <tr>
+    <% @cat.attributes.each do |attribute, value| %>
+      <td> <%=  value %> </td>
+    <% end %>
+  </tr>
+</table>
+
+<section>
+  <h3>Pending Requests!</h3>
+  <% @pending_requests.each do |rental| %>
+  <!--  status assigned to an object when we run the query for requests -->
+    <p>
+      Requested By: <%= rental.requester.username %>
+      <%= [rental.start_date, rental.end_date] %>
+      <% if @cat.owner == current_user %>
+        <%= button_to 'approve', approve_cat_rental_request_url(rental), method: :patch %>
+        <%= button_to 'deny', deny_cat_rental_request_url(rental), method: :patch %>
+      <% end %>
+    </p>
+    <br>
+  <% end %>
+</section>
+
+<section>
+  <h3>Approved Requests!</h3>
+  <% @approved_requests.each do |rental| %>
+    <p>
+      Requested By: <%= rental.requester.username %>
+      <%= [rental.start_date, rental.end_date] %>
+    </p>
+    <br>
+  <% end %>
+</section>
+<!--
+
+<table>
+<th>key</th>
+<th>Value</th>
+<% for item in request.env %>
+<tr>
+<td><%= item[0] %></td>
+<td><%= item[1] %></td>
+</tr>
+<% end %>
+</table> -->

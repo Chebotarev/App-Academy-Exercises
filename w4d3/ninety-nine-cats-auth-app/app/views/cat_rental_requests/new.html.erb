@@ -1,0 +1,24 @@
+<h1>New Request!</h1>
+
+<%= render "shared/errors" %>
+
+<form action="<%= cat_rental_requests_url %>" method="post">
+  <input type="hidden" name="_method" value="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="cat">Cat</label>
+  <select name="cat_rental_request[cat_id]" id="cat">
+    <option></option>
+    <% @cats.each do |cat| %>
+      <option value="<%= cat.id %>" <%=cat == @cat ? "selected" : "" %> ><%= cat.name %></option>
+    <% end %>
+  </select>
+
+  <input type="date" name="cat_rental_request[start_date]">
+  <input type="date" name="cat_rental_request[end_date]">
+
+
+
+
+  <input type="submit" value="submit">
+</form>
