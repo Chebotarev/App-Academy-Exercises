@@ -1,0 +1,26 @@
+<%= render 'shared/errors' %>
+
+<form action="<%= form_action %>" method="post">
+  <input type="hidden" name="_method" value="<%= form_method %>">
+
+  <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
+
+   <p>
+     <label>Email
+       <br /><input
+              type="email"
+              name="users[email]"
+              value="<%= user.email %>">
+     </label>
+   </p>
+
+   <p>
+     <label>Password
+       <br /><input type="password" name="users[password]">
+     </label>
+   </p>
+
+  <input type="submit" value="<%= form_submit_text %>">
+</form>
