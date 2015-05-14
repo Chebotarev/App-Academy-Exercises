@@ -28,7 +28,6 @@ class User < ActiveRecord::Base
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
-    save!
   end
 
   def reset_session_token!

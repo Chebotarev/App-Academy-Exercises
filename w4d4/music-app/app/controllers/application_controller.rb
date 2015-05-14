@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log_in!(user)
-    user = User.find_by_credentials(user_params)
+    user = User.find_by_credentials(params[:users][:email], params[:users][:password])
     session[:session_token] = user.reset_session_token!
   end
 
