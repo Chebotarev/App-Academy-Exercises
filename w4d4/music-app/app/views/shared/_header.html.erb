@@ -3,4 +3,10 @@
     Logged In As <%= current_user.email %>
     <%= button_to "Logout", session_url, method: :delete %>
   </p>
+
+<% else %>
+  <p>
+    <%= button_to "Log In", new_session_url, method: :get %>
+    <%= button_to "Create User", new_user_url, method: :get %>
+  </p>
 <% end %>
