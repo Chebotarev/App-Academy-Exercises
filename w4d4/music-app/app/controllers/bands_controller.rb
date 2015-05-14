@@ -1,4 +1,6 @@
 class BandsController < ApplicationController
+  before_action :verify_login
+
   def index
 
   end
@@ -26,4 +28,14 @@ class BandsController < ApplicationController
   def destroy
 
   end
+
+  private
+
+    def band_params
+      params.require(:bands).permit(:name)
+    end
+
+    def verify_login
+      redirect_to new_session_url unless logged_in?
+    end
 end
