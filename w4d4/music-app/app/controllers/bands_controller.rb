@@ -1,6 +1,7 @@
 class BandsController < ApplicationController
   helper_method :logged_in?
   helper_method :current_user
+
   before_action :verify_login
 
   def index
@@ -41,7 +42,9 @@ class BandsController < ApplicationController
   end
 
   def destroy
-
+    @band = Band.find(params[:id])
+    @band.delete
+    redirect_to bands_url
   end
 
   private

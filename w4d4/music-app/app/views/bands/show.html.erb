@@ -8,4 +8,8 @@
 <% end %>
 
 <%= button_to "Edit Band", edit_band_url(@band), method: :get %>
-<br /><%= button_to "Back to Bands", bands_url, method: :get %>
+<%= button_to "Back to Bands", bands_url, method: :get %>
+<%= button_to "Delete Band",
+            band_url(@band),
+            method: :delete,
+            data: { confirm: "Really Delete #{@band.name}?" } %>
