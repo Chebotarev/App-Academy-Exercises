@@ -1,0 +1,7 @@
+<h1>Create Album</h1>
+<%= render 'albums/form',
+            form_submit_text: "Create",
+            form_action: albums_url,
+            form_method: "post",
+            album: @album,
+            bands: @bands %>

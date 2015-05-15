@@ -1,0 +1,56 @@
+<%= render 'shared/errors' %>
+
+<form action="<%= form_action %>" method="post">
+  <input type="hidden" name="_method" value="<%= form_method %>">
+
+  <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
+
+   <p>
+     <label>Name
+       <br /><input
+              type="text"
+              name="albums[name]"
+              value="<%= album.name if album %>">
+     </label>
+   </p>
+
+   <p>
+     <label>Band
+       <select name="albums[band_id]">
+         <option value="">None</option>
+         <% bands.each do |band| %>
+            <option
+              value="<%= band.id %>"
+              <%= "selected" if params[:band_id].to_i == band.id %>>
+                <%= band.name %>
+            </option>
+         <% end %>
+       </select>
+     </label>
+   </p>
+
+   <p>
+     <label>Produced:
+       <br /><label>In Studio
+         <input
+           type="radio"
+           name="albums[production]"
+           value="studio"
+           <%= "checked" if album.production == "studio" %>>
+       </label>
+
+       <br /><label>Live
+         <input
+           type="radio"
+           name="albums[production]"
+           value="live"
+           <%= "checked" if album.production == "live" %>>
+       </label>
+     </label>
+   </p>
+
+
+  <input type="submit" value="<%= form_submit_text %>">
+</form>

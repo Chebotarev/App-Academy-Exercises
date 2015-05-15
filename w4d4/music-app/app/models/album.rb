@@ -7,7 +7,7 @@ class Album < ActiveRecord::Base
   after_initialize :set_production
 
   belongs_to :band
-  has_many :tracks
+  has_many :tracks, dependent: :destroy
 
   def set_production
     self.production ||= "studio"

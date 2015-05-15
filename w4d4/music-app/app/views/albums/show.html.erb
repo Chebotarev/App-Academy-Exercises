@@ -1,0 +1,20 @@
+<h1>Album: <%= @album.name %></h1>
+<h3>Production: <%= @album.production %></h3>
+<% unless @album_tracks.empty? %>
+  <% @album_tracks.each do |track| %>
+    <%= link_to track.name, album_url(track) %>
+  <% end %>
+<% else %>
+  <h2>No tracks!</h2>
+<% end %>
+
+<%= button_to "Edit Album", edit_album_url(@album), method: :get %>
+<%= button_to "Back to Band", band_url(@album.band_id), method: :get %>
+<%= button_to "Create New Album",
+            new_band_album_url(band_id: @album.band_id),
+            method: :get %>
+
+<%= button_to "Delete Album",
+            album_url(@album),
+            method: :delete,
+            data: { confirm: "Really Delete #{@album.name}?" } %>
