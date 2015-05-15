@@ -1,8 +1,10 @@
 <h1>Band: <%= @band.name %></h1>
 <% unless @band_albums.empty? %>
-  <% @band_albums.each do |album| %>
-    <%= link_to album.name, album_url(album) %><br />
-  <% end %>
+  <ol>
+    <% @band_albums.each do |album| %>
+      <li><%= link_to album.name, album_url(album) %><br /></li>
+    <% end %>
+  </ol>
 <% else %>
   <h2>No Albums!</h2>
 <% end %>

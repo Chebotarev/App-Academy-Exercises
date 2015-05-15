@@ -1,9 +1,9 @@
 <% unless @bands.empty? %>
-  <% @bands.each do |band| %>
-    <p>
-      <%= link_to band.name, band_url(band) %>
-    </p>
-  <% end %>
+  <ul>
+    <% @bands.each do |band| %>
+        <li><%= link_to band.name, band_url(band) %></li>
+    <% end %>
+  </ul>
 <% else %>
   <h2>No Bands!</h2>
 <% end %>

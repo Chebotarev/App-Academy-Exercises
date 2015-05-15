@@ -1,0 +1,8 @@
+<h1>Create Track</h1>
+<%= render 'tracks/form',
+            form_submit_text: "Create",
+            form_action: tracks_url,
+            form_method: "post",
+            track: @track,
+            albums: @albums,
+            current_album_id: params[:album_id] %>

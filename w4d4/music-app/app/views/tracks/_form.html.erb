@@ -1,0 +1,64 @@
+<%= render 'shared/errors' %>
+
+<form action="<%= form_action %>" method="post">
+  <input type="hidden" name="_method" value="<%= form_method %>">
+
+  <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
+
+   <p>
+     <label>Name:
+       <br /><input
+              type="text"
+              name="tracks[name]"
+              value="<%= track.name if track %>">
+     </label>
+   </p>
+
+   <p>
+     <label>Album:
+       <select name="tracks[album_id]">
+         <option value="">None</option>
+         <% albums.each do |album| %>
+            <option
+              value="<%= album.id %>"
+              <%= "selected" if current_album_id.to_i == album.id %>>
+                <%= album.name %>
+            </option>
+         <% end %>
+       </select>
+     </label>
+   </p>
+
+   <p>
+     <label>Variety:
+       <br /><label>Regular
+         <input
+           type="radio"
+           name="tracks[variety]"
+           value="regular"
+           <%= "checked" if track.variety == "regular" %>>
+       </label>
+
+       <br /><label>Bonus
+         <input
+           type="radio"
+           name="tracks[variety]"
+           value="live"
+           <%= "checked" if track.variety == "bonus" %>>
+       </label>
+     </label>
+   </p>
+
+   <p>
+     <label for="tracks-lyrics">Lyrics:</label><br />
+
+       <textarea
+          id="track-lyrics"
+          name="tracks[lyrics]"
+          rows="20" cols="20"><%= track.lyrics %></textarea>
+   </p>
+
+  <input type="submit" value="<%= form_submit_text %>">
+</form>

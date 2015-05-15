@@ -1,0 +1,8 @@
+<h1>Edit Track</h1>
+<%= render 'tracks/form',
+            form_submit_text: "Save Changes",
+            form_action: track_url(@track),
+            form_method: "patch",
+            track: @track,
+            albums: @albums,
+            current_album_id: @track.album_id %>

@@ -1,0 +1,18 @@
+<h1>Track: <%= @track.name %></h1>
+<h3>Variety: <%= @track.variety %></h3>
+<% unless @track.lyrics.blank? %>
+  <p><%= @track.lyrics %></p>
+<% else %>
+  <h2>No lyrics!</h2>
+<% end %>
+
+<%= button_to "Edit Track", edit_track_url(@track), method: :get %>
+<%= button_to "Back to Album", album_url(@track.album_id), method: :get %>
+<%= button_to "Create New Track",
+            new_album_track_url(album_id: @track.album_id),
+            method: :get %>
+
+<%= button_to "Delete Track",
+            track_url(@track),
+            method: :delete,
+            data: { confirm: "Really Delete #{@track.name}?" } %>

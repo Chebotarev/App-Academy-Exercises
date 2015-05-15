@@ -23,7 +23,7 @@
          <% bands.each do |band| %>
             <option
               value="<%= band.id %>"
-              <%= "selected" if params[:band_id].to_i == band.id %>>
+              <%= "selected" if current_band_id.to_i == band.id %>>
                 <%= band.name %>
             </option>
          <% end %>
