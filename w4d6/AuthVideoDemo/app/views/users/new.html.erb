@@ -11,18 +11,26 @@
     type="hidden"
     name="authenticity_token"
     value="<%= form_authenticity_token %>">
-  
-  <label for="user_username">Username</label>
-  <input
-    type="text"
-    name="user[username]"
-    id="user_username"
-    value="<%= @user.username %>">
-  <br>
 
-  <label for="user_password">Password</label>
-  <input type="password" name="user[password]" id="user_password">
-  <br>
+  <div class="row">
+    <div class="form-group col-xs-4">
+      <label for="user_username">Username</label>
+      <input
+        type="text"
+        name="user[username]"
+        class="form-control"
+        id="user_username"
+        value="<%= @user.username %>">
+    </div>
 
-  <input type="submit" value="Create User!">
+    <div class="form-group col-xs-4">
+      <label for="user_password">Password</label>
+      <input type="password"
+        name="user[password]"
+        class="form-control"
+        id="user_password">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create User!</button>
 </form>
