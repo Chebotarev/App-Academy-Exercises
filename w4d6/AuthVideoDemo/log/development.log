@@ -2913,3 +2913,188 @@ Started GET "/home" for 127.0.0.1 at 2015-05-18 00:19:35 -0700
 Processing by StaticPagesController#home as HTML
   Rendered static_pages/home.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-18 00:20:49 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-18 00:20:50 -0700
+Processing by StaticPagesController#about as HTML
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered static_pages/about.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2015-05-18 00:20:51 -0700
+Processing by StaticPagesController#contact as HTML
+  Rendered static_pages/contact.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/user/new" for 127.0.0.1 at 2015-05-18 00:24:55 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 59ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-18 07:58:58 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-18 07:58:59 -0700
+Processing by StaticPagesController#about as HTML
+  Rendered shared/_lorem.html.erb (0.4ms)
+  Rendered shared/_lorem.html.erb (0.1ms)
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered static_pages/about.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-05-18 07:59:01 -0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2015-05-18 07:59:03 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2015-05-18 07:59:05 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-05-18 07:59:06 -0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-18 07:59:06 -0700
+Processing by StaticPagesController#about as HTML
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered shared/_lorem.html.erb (0.0ms)
+  Rendered static_pages/about.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2015-05-18 07:59:14 -0700
+Processing by StaticPagesController#contact as HTML
+  Rendered static_pages/contact.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-05-18 07:59:18 -0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2015-05-18 07:59:18 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user" for 127.0.0.1 at 2015-05-18 07:59:20 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"ChWCN/EiCFOA2V5LaxunufQnHV1WaoEchH+78yGfFUw=", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 108ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2015-05-18 07:59:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-18 07:59:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-18 07:59:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-18 07:59:21 -0700
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2015-05-18 07:59:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-18 07:59:21 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-18 07:59:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-18 07:59:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-18 07:59:37 -0700
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2015-05-18 07:59:37 -0700
