@@ -1,7 +1,7 @@
 require 'active_support'
 require 'active_support/core_ext'
 require 'webrick'
-require_relative '../lib/phase5/controller_base'
+require_relative '../lib/controller_base'
 require 'byebug'
 
 # http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick.html
@@ -33,7 +33,7 @@ class Cat
   end
 end
 
-class CatsController < Phase5::ControllerBase
+class CatsController < ControllerBase
   def create
     byebug
     @cat = Cat.new(params["cat"])
