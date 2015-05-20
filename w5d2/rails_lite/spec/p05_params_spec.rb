@@ -39,6 +39,13 @@ describe Phase5::Params do
       params = Phase5::Params.new(req)
       expect(params["user"]["address"]["street"]).to eq("main")
     end
+
+    it "handles two nested keys" do
+      req.query_string = "cat[name]=fluffy&cat[owner]=alex"
+      params = Phase5::Params.new(req)
+      expect(params["cat"]["owner"]).to eq("alex")
+      expect(params["cat"]["name"]).to eq("fluffy")
+    end
   end
 
   context "post body" do
