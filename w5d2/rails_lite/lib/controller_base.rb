@@ -1,6 +1,7 @@
 require 'active_support/inflector'
 require_relative './params'
 require_relative './session'
+require_relative './flash'
 
 class ControllerBase
   attr_reader :req, :res, :params
@@ -31,6 +32,7 @@ class ControllerBase
     res["Location"] = url
     res.status = 302
 
+    flash.store_flash(res)
     session.store_session(res)
 
     @already_built_response = true
@@ -53,11 +55,16 @@ class ControllerBase
     res.body = content
 
     session.store_session(res)
+    flash.store_flash(res)
 
     @already_built_response = true
   end
 
   def session
     @session ||= Session.new(req)
+  end
+
+  def flash
+    @flash ||= Flash.new(req)
   end
 end
