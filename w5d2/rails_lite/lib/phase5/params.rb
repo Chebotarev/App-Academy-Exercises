@@ -34,23 +34,23 @@ module Phase5
     # should return
     # { "user" => { "address" => { "street" => "main", "zip" => "89436" } } }
     def parse_www_encoded_form(www_encoded_form)
-      result = {}
-      return result if www_encoded_form.nil?
+      params = {}
+      return params if www_encoded_form.nil?
 
       URI::decode_www_form(www_encoded_form).each do |keys, value|
-        nested_hash = Hash.new
+        current = params
 
-        parse_key(keys).reverse.each_with_index do |key, idx|
-          value = nested_hash unless idx == 0
-          nested_hash = { key => value}
+        parse_key(keys).each_with_index do |key, idx|
+          if idx == parse_key(keys).length - 1
+            current[key] = value
+          else
+            current[key] ||= {}
+            current = current[key]
+          end
         end
-        p nested_hash
-        result.merge!(nested_hash)
-        # 'cat' => [ {'owner' => 'alex'} , 'name' => 'fluffy' ]
       end
 
-      p "Result: #{result}"
-      result
+      params
     end
 
     # this should return an array
