@@ -66,6 +66,10 @@ class Router
 
   # either throw 404 or call run on a matched route
   def run(req, res)
+    if req.body
+      URI::decode_www_form(req.body)
+      # check for _method and change it if so
+    end
     route_match = match(req)
     if route_match
       route_match.run(req, res)

@@ -33,14 +33,12 @@ class Cats2Controller < ControllerBase
   def index
     render_string = $cats.to_s
     render_string += flash.now["errors"] if flash.now["errors"]
-    p flash
-    p render_string
     render_content(render_string, "text/text")
   end
 end
 
 class MyController < ControllerBase
-  def test_flash
+  # def test_flash
     # flash.now[:errors] = "THIS IS A TEST"
     # flash[:warn] = "Different"
     # render :test_flash
@@ -48,6 +46,9 @@ class MyController < ControllerBase
     # flash[:errors] = "THIS IS A TEST"
     # redirect_to "/cats"
 
+  # end
+
+  def test_links
   end
 end
 
@@ -55,6 +56,7 @@ router = Router.new
 router.draw do
   get Regexp.new("^/cats$"), Cats2Controller, :index
   get Regexp.new("^/cats/(?<cat_id>\\d+)/statuses$"), StatusesController, :index
+  get Regexp.new("^/links$"), MyController, :test_links
   # get Regexp.new("^/flash$"), MyController, :test_flash
 end
 

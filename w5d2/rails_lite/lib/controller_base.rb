@@ -1,9 +1,12 @@
 require 'active_support/inflector'
+require_relative './route_helpers'
 require_relative './params'
 require_relative './session'
 require_relative './flash'
 
 class ControllerBase
+  include RouteHelpers
+
   attr_reader :req, :res, :params
 
   # Setup the controller
@@ -12,7 +15,6 @@ class ControllerBase
     @res = res
 
     @params = Params.new(req, route_params)
-
     @already_built_response = false
   end
 
@@ -54,8 +56,8 @@ class ControllerBase
     res.content_type = content_type
     res.body = content
 
-    session.store_session(res)
     flash.store_flash(res)
+    session.store_session(res)
 
     @already_built_response = true
   end
