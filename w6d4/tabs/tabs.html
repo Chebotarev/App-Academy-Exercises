@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cool Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+    <script src="./tabs.js"></script>
+    <link href="./tabs.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <ul class="tabs" data-content-tabs="#content-tabs">
+      <li>
+        <a href="#pembrokes">Pembrokes</a>
+      </li>
+      <li>
+        <a href="#cardigan">Cardigan</a>
+      </li>
+      <li>
+        <a href="#golden-retriever">Golden Retriever</a>
+      </li>
+      <div id="content-tabs">
+        <div class="tab-pane" id="pembrokes">
+          <p>
+            Pembrokes feature pointed ears, and are somewhat smaller in stature than the Cardigan. Considered a practical dog, they are low-set, intelligent, strong and sturdy with stamina sufficient to work a day on the farm. The dog's head is fox-like and the tail short, which can be accomplished through breeding or docking.[2] Historically, the Pembroke was a breed with a natural bob tail (a very short tail), and today, if the Pembroke has a tail at all, it is usually curly. Due to the advent of tail docking in dogs, the bob tail was not aggressively pursued, with breeders focusing instead on other characteristics, and the tail artificially shortened if need be. Given that some countries now ban docking, breeders are again attempting to select dogs with the genes for natural bob tails. Pembrokes stand from 10 inches (25 cm) to 12 inches (30 cm), and weigh approximately 28 pounds (13 kg).[4]
+          </p>
+        </div>
+
+        <div class="tab-pane" id="cardigan">
+          <p>
+            The Cardigan is a long, low dog with upright ears and a fox brush tail.[6] The old American Kennel Club standard called it an "Alsatian on short legs".[citation needed] The Cardigan's tail is long (unlike the Pembroke Welsh corgi, whose tail may be long,[7] naturally bobbed or docked[8]). Cardigans come in a variety of colors including any shade of red, sable, or brindle, as well as black, with or without tan, brindle or blue merle, with or without tan or brindle points. Other unofficial colors can occur, such as red merle, but these colors are not considered acceptable per the Cardigan standard. They usually have white on the neck, chest, legs, muzzle, underneath, tip of the tail and as a blaze on the head, known as the "Irish pattern."[citation needed] Other markings include ticking on the legs and muzzle, smutty muzzles and monk's hoods, especially on sables (a pattern of darker tipped hairs over a basic red coat color.[citation needed]. An average Cardigan is around 10.5 to 13 inches (260 to 315 mm) tall at the withers and weighs from 30 to 38 lb. (13.6 to 17.2 kg) for the male and 25 to 34 lb. (11.3 to 15.4 kg) for the female.[citation needed]
+          </p>
+        </div>
+
+        <div class="tab-pane" id="golden-retriever">
+          <p>
+            The Golden Retriever is a large-sized breed of dog bred as gun dogs to retrieve shot waterfowl such as ducks and upland game birds during hunting and shooting parties,[1] and were named 'retriever' because of their ability to retrieve shot game undamaged. Golden Retrievers have an instinctive love of water, and are easy to train to basic or advanced obedience standards. They are a long-coated breed, with a dense inner coat that provides them with adequate warmth in the outdoors, and an outer coat that lies flat against their bodies and repels water. Golden Retrievers are well suited to residency in suburban or country environments. Although they need substantial outdoor exercise, they should be housed in a fenced area because of their instinctual tendency to roam.[2] The dog sheds copiously, particularly at the change of seasons, and requires fairly regular grooming.
+          </p>
+        </div>
+      </div>
+    </ul>
+
+    <script>
+      $(function() {
+        $('.tabs').tabs();
+      })
+    </script>
+  </body>
+</html>
