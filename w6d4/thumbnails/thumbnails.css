@@ -1,0 +1,15 @@
+div.thumbnails {
+  width: 400px;
+}
+
+div.gutter-images img {
+  display: block;
+  float: left;
+  width: 20%;
+}
+
+div.active img {
+  width: 100%;
+  overflow: hidden;
+  height: 300px;
+}

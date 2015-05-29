@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thumbnails!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+    <script src="./thumbnails.js"></script>
+    <link rel="stylesheet" href="./thumbnails.css" charset="utf-8">
+  </head>
+  <body>
+    <div class="thumbnails">
+      <div class="active"></div>
+
+      <div class="gutter-images">
+        <img src="http://placekitten.com/g/200/300" alt="" />
+        <img src="http://placekitten.com/g/900/800" alt="" />
+        <img src="http://placekitten.com/g/800/700" alt="" />
+        <img src="http://placekitten.com/g/700/600" alt="" />
+        <img src="http://placekitten.com/g/600/500" alt="" />
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        $('.thumbnails').thumbnails();
+      })
+    </script>
+  </body>
+</html>
