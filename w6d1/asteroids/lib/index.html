@@ -1,0 +1,22 @@
+<html>
+<head></head>
+
+<body>
+  <canvas id="game-canvas" width="750" height="750" style="border: 3px solid black;"></canvas>
+
+  <script src="./keymaster-master/keymaster.js"></script>
+  <script src="./utils.js"></script>
+  <script src="./movingObjects.js"></script>
+  <script src="./asteroid.js"></script>
+  <script src="./ship.js"></script>
+  <script src="./bullet.js"></script>
+  <script src="./game.js"></script>
+  <script src="./gameView.js"></script>
+  <script>
+    var canvasEl = document.getElementsByTagName("canvas")[0];
+    var test = new Asteroids.GameView(canvasEl);
+    console.log(test);
+    test.start();
+  </script>
+</body>
+</html>
