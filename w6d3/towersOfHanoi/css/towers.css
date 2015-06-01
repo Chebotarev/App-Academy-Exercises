@@ -1,0 +1,44 @@
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.board {
+  margin-left: 35%;
+}
+
+.pile {
+  position: relative;
+  height: 200px;
+  width: 100px;
+  background-color: #aaa;
+  margin: 25px;
+  float: left;
+}
+
+.selected {
+  background-color: cadetblue;
+}
+
+.disk {
+  /*background-color: red;*/
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+}
+
+.small {
+  background-color: green;
+  width: 20px;
+}
+
+.medium {
+  background-color: red;
+  width: 40px;
+}
+
+.large {
+  background-color: yellow;
+  width: 80px;
+}

@@ -1,0 +1,58 @@
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+h1 {
+  margin-left: 43%;
+}
+
+h2 {
+  margin-left: 43%;
+}
+
+.cell {
+  float: left;
+  background-color: grey;
+  border: 2px solid black;
+  height: 100px;
+  width: 100px;
+}
+
+.cell.unclicked:hover {
+  background-color: yellow;
+}
+
+.clicked {
+  background-color: white;
+}
+
+.piece {
+  font-size: 75px;
+  margin: auto;
+  margin-left: 32px;
+}
+
+.piece.x {
+  color: blue;
+}
+
+.winner {
+  background-color: cadetblue;
+}
+
+.piece.o {
+  color: purple;
+}
+
+.row {
+  display: block;
+  width: 312px;
+}
+
+.board {
+  width: 312px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
